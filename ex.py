@@ -81,7 +81,7 @@ add_auth_entry("\x43\x46\x4F\x4B\x4C", "\x13\x10\x11\x16\x17\x14", 1)#          
 a = AsyncSniffer(filter="tcp", lfilter=lambda x:x.sport==RPORT and x[TCP].flags=="SA")
 a.start()
 
-for i in range(140,150):
+for i in range(256):
     p = IP(src=LHOST, dst=f"34.125.111.{i}")/TCP(dport=RPORT)
     send(p)
 
